@@ -1,0 +1,42 @@
+
+<br>
+
+
+
+<table class="table">
+  
+  <tbody  *ngFor="let vehicle of vehicles">
+       
+      <tr> 
+          <th>Marka</th>
+          <td>{{vehicle.brandName}}</td>
+      </tr>
+
+      <tr> 
+          <th>Model</th>
+          <td>{{vehicle.vehicleName}}</td>
+      </tr>
+
+      <tr>
+          <th>Renk</th>
+          <td>{{vehicle.color}}</td>
+      </tr>
+
+      <tr>
+          <th>Model Yılı</th>
+          <td>{{vehicle.model}}</td>
+      </tr>
+
+      <tr>
+          <th>Günlük Kiralama Ücreti</th>
+          <td>{{vehicle.dailyPrice}} TL</td>
+      </tr>
+
+      <tr>
+          <th>Açıklama</th>
+          <td>{{vehicle.description}}</td>
+      </tr>
+      
+  </tbody>
+   
+</table>
