@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Image } from 'src/app/models/image';
 import { Vehicle } from 'src/app/models/vehicle';
 import { VehicleDetailService } from 'src/app/services/vehicle-detail.service';
@@ -18,7 +19,7 @@ export class VehicleDetailComponent implements OnInit {
   dataLoaded = false;
   imageUrl = "https://localhost:44308/api";
 
-  constructor(private activatedRoute:ActivatedRoute,private vehicleDetailService:VehicleDetailService,private vehicleService:VehicleService) { }
+  constructor(private activatedRoute:ActivatedRoute,private vehicleDetailService:VehicleDetailService,private vehicleService:VehicleService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -48,6 +49,11 @@ export class VehicleDetailComponent implements OnInit {
     } else {
       return "carousel-item";
     }
+  }
+  addToRent(vehicle:Vehicle)
+  {
+    if(vehicle.id===1)
+    this.toastrService.success("Kiralama işlemi eklendi",vehicle.vehicleName)
   }
 
 }

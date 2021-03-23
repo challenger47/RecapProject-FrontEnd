@@ -36,7 +36,16 @@
           <th>Açıklama</th>
           <td>{{vehicle.description}}</td>
       </tr>
+      <tr><div class="form-group d-flex justify-content-center mx-5"><button class="form-control btn btn-primary" (click)="addToRent(vehicle)">Kirala</button> </div></tr>
+
+     <img *ngFor="let image of vehicle.images" src="https://localhost:44308/{{image.imagePath}}" height="100" width="150" alt="">
       
   </tbody>
+
+    
+
    
 </table>
+
+
+ 
